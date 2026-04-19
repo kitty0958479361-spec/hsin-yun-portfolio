@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-light: #F3F1ED;
+  --color-card-bg: #EAE7E2;
+  --color-accent: #3E3A39;
+  --color-text-main: #3E3A39;
+  --color-text-dim: #666261;
+  --font-sans: "PingFang TC", "Microsoft JhengHei", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-bg-light text-text-main antialiased selection:bg-accent/10;
+  }
+}
+
+.video-aspect {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.short-aspect {
+  position: relative;
+  padding-bottom: 177.77%;
+  height: 0;
+}
+
+.video-aspect iframe, .short-aspect iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
